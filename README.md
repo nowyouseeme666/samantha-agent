@@ -21,7 +21,9 @@ samantha-agent/
 │   ├── safety/          # 内容安全过滤 + 情绪风险监控
 │   └── tools/           # Agent 工具实现 (Phase 2)
 ├── frontend/            # React 前端 (Phase 2)
-│   └── src/components/  # ChatBox, ChatInput, EmotionPanel, MemoryPanel
+│   ├── src/components/  # ChatBox, ChatInput, EmotionPanel, MemoryPanel
+│   ├── src/showcase/    # 3D 架构展示页 (Three.js / R3F)
+│   └── showcase.html    # 展示页入口
 ├── tests/               # pytest 单元 + 集成测试
 └── main.py              # CLI 入口
 ```
@@ -45,8 +47,22 @@ uvicorn src.api:app --host 0.0.0.0 --port 8000 --reload
 # --- 前端开发 ---
 cd frontend
 npm install
-npm run dev        # → http://localhost:5173
+npm run dev        # → http://localhost:3000
 ```
+
+> 访问 `http://localhost:3000/showcase.html` 查看 3D 架构展示页。
+
+## Architecture Showcase
+
+一个 3D 可交互的架构展示页，用 Three.js + React Three Fiber 可视化 Samantha 的内部工作机制。
+
+| Section | 内容 |
+|---------|------|
+| Hero | 3D 核心球体 + 轨道环 + 粒子场 |
+| Pipeline | 6 节点处理管线（输入→情绪→记忆→LLM→安全→输出），滚动触发 |
+| Pillars | 三层记忆 / 情绪检测 / 工具调用，各带独立 3D 场景 |
+| Tool Demo | 手动选择工具，查看输入→处理→输出动画 |
+| Live Demo | Samantha 对话回放 |
 
 ## API Endpoints
 
