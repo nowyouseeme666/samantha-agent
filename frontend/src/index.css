@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: 'Source Han Sans CN', 'Noto Sans SC', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(180deg, #faf9f7 0%, #faf7f2 100%);
+  min-height: 100vh;
+  color: #2c2c2a;
+}
+* { box-sizing: border-box; }
+@keyframes blink { 50% { opacity: 0; } }

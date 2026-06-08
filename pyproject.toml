@@ -1,0 +1,19 @@
+[project]
+name = "samantha-agent"
+version = "0.1.0"
+description = "Samantha — An emotional companion agent powered by RAG memory, emotion state machine, and tool calling."
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = ["-v", "--tb=short", "--strict-markers"]
+
+[tool.setuptools]
+packages = ["src"]

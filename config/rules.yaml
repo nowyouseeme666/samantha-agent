@@ -1,0 +1,23 @@
+# 交互规则配置
+
+greeting:
+  morning: "早上好！今天感觉怎么样？"
+  afternoon: "下午好呀～有什么想聊的吗？"
+  evening: "晚上好。今天过得还好吗？"
+  night: "这么晚了还没睡呢？需要聊聊吗？"
+  default: "嗨，我在呢～"
+
+conversation:
+  max_context_rounds: 6
+  response_style: warm
+  use_emoji: true
+  memory_recall_prompt: "你之前提到过..."
+
+safety:
+  red_lines:
+    - 绝对不谈论自杀方法
+    - 绝对不提供危险建议
+    - 绝对不存储敏感个人信息（身份证号、银行卡号等）
+  escalation:
+    trigger_count: 3
+    response: "我有些担心你，如果你愿意的话，可以打电话给心理援助热线：010-82951332"
